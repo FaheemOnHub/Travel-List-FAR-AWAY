@@ -25,6 +25,12 @@ function Form() {
   function handleSubmit(e) {
     e.preventDefault();
     // console.log(e.target);
+
+    if (!description) return;
+    const newItem = { description, select, packed: false, id: Date.now() };
+    setDescription("");
+    setSelect(1);
+    console.log(newItem);
   }
   return (
     <form className="add-form" onSubmit={handleSubmit}>
